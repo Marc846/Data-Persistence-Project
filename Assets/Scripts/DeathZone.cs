@@ -9,6 +9,8 @@ public class DeathZone : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        DataManager.Instance.SaveScore();
+        //Debug.Log(Application.persistentDataPath + "/savefile.json");
         Destroy(other.gameObject);
         Manager.GameOver();
     }
